@@ -1,0 +1,22 @@
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8901/user
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+      stream:
+        bindings:
+          input:
+              destination:  orgChangeTopic
+              content-type: application/json
+              group: licensingGroup
+  security:
+    oauth2:
+      client:
+        client-id: licensing-service
+
